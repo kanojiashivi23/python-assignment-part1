@@ -9,6 +9,16 @@ raw_students = [
     {"name": " Sneha pillai ",    "roll": "105", "marks_str": "75, 80, 70, 68, 85"},
 ]
 
-# Loop through students
 for student in raw_students:
-    print(student)
+    
+    # Clean name
+    clean_name = student["name"].strip().title()
+    
+    # Convert roll
+    roll = int(student["roll"])
+    
+    # Convert marks
+    marks = student["marks_str"].split(", ")
+    marks = [int(m) for m in marks]
+    
+    print(clean_name, roll, marks)
